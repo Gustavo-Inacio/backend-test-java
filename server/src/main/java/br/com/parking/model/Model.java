@@ -3,15 +3,14 @@ package br.com.parking.model;
 import java.util.Date;
 
 public abstract class Model {
-	public int id;
+	public Integer id;
 	public Date update;
 	public Date create;
-	public int status ;
-	
-	public int getId() {
+	public Integer status ;
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public Date getUpdate() {
@@ -26,12 +25,13 @@ public abstract class Model {
 	public void setCreate(Date create) {
 		this.create = create;
 	}
-	public int getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
-	public void setStatus(int status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
+	
 	
 	
 }
