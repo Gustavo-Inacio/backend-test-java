@@ -27,20 +27,20 @@ public class Controller extends HttpServlet {
 		Gson gson = new Gson();
 		
 		 if(valor.endsWith("json")) {
-			InputStream is =  req.getInputStream();
-			Scanner s = new Scanner(is);
+			InputStream inputData =  req.getInputStream();
+			Scanner scan = new Scanner(inputData);
 			String body = "";
 			
-			while(s.hasNextLine()) {
-				body += s.nextLine();
+			while(scan.hasNextLine()) {
+				body += scan.nextLine();
 			}
 			
+			
 			try {
-				Company compTest = new Company();
-				compTest = gson.fromJson(body, Company.class);
-				System.out.println(compTest);
+				String json = gson.toJson(body);
+				req.setAttribute("bodyData", body);
 				
-				req.setAttribute("modelObject", compTest);
+				System.out.println(json);
 				
 			} catch (Exception e) {
 				System.out.println(e.getMessage());

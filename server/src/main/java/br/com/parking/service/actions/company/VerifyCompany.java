@@ -13,8 +13,8 @@ public class VerifyCompany {
 			throw new MissingDataException("Some company Values are null");
 		}
 		
-		if(comp.getName().trim().length() < 3 || comp.getPhone().trim().length() < 10 || comp.getCnpj().length() < 14) {
-			throw new MissingDataException("Must have phone >= 10, name >= 3 and cnpj >= 15");
+		if(comp.getName().trim().length() < 3 || comp.getPhone().trim().length() < 10 || comp.getCnpj().length() != 14) {
+			throw new MissingDataException("Must have phone >= 10, name >= 3 and cnpj == 14");
 		} 
 		
 		if(compDAO.CNPJAlreadyRegistered(comp)) {
