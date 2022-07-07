@@ -1,4 +1,7 @@
-package br.com.parking.model;
+package br.com.parking.model.comunication;
+
+import br.com.parking.model.Company;
+import br.com.parking.model.Employee;
 
 public class CompanyEmployee{
 	Company company;
