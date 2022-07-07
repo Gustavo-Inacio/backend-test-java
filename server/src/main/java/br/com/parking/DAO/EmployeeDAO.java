@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import com.mysql.cj.callback.MysqlCallback;
+
 import br.com.parking.model.Employee;
 import messages.Message;
 import myExceptions.UniqueDataAlreadyExists;
@@ -30,7 +32,8 @@ public class EmployeeDAO extends DAO {
 			
 			super.closeConnection(con);
 		} catch (SQLException e) {
-			if(e.getErrorCode() == 1062) {
+			if(e.getErrorCode() == 1062) { // 1062
+				System.out.println(e);
 				throw new UniqueDataAlreadyExists("Login already exixts");
 			}
 		}

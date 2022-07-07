@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import br.com.parking.model.comunication.AuthenticationData;
+
 public class AuthenticationValidationDAO extends DAO{
 	
 	public boolean validateToken(String token) {
@@ -27,6 +29,7 @@ public class AuthenticationValidationDAO extends DAO{
 		}
 		
 		return tokenExists;
-
 	}
+	
+	
 }

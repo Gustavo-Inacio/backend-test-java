@@ -9,6 +9,7 @@ import br.com.parking.service.actions.company.DeleteCompanyAction;
 import br.com.parking.service.actions.company.UpdateCompanyAction;
 import br.com.parking.service.actions.employee.CreateEmployeeAction;
 import br.com.parking.service.actions.employee.DeleteEmployeeAction;
+import br.com.parking.service.actions.employee.GetAccessToken;
 import br.com.parking.service.actions.employee.UpdateEmployeeAction;
 import myExceptions.RouteNotFoundException;
 
@@ -29,6 +30,7 @@ public class Routes {
 		employeeAction.put("/create", CreateEmployeeAction.class);
 		employeeAction.put("/update", UpdateEmployeeAction.class);
 		employeeAction.put("/delete", DeleteEmployeeAction.class);
+		employeeAction.put("/accessToken", GetAccessToken.class);
 		generalRoot.put("/employee", employeeAction);
 		
 	}

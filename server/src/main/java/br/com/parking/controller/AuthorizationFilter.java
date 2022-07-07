@@ -30,6 +30,7 @@ public class AuthorizationFilter implements Filter {
 		
 		List<String> freeActions = new ArrayList<String>();
 		freeActions.add("/company/create");
+		freeActions.add("/employee/accessToken");
 		
 		String projectName = "/ParkingLot";
 		String URI = request.getRequestURI();
