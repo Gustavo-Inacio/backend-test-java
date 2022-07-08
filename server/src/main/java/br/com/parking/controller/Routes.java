@@ -11,27 +11,35 @@ import br.com.parking.service.actions.employee.CreateEmployeeAction;
 import br.com.parking.service.actions.employee.DeleteEmployeeAction;
 import br.com.parking.service.actions.employee.GetAccessToken;
 import br.com.parking.service.actions.employee.UpdateEmployeeAction;
+import br.com.parking.service.actions.parkinglot.CreateParkinglot;
 import myExceptions.RouteNotFoundException;
 
 public class Routes {
 	
 	private static Map<String, Class> companyAction = new HashMap<>();
 	private static Map<String, Class> employeeAction = new HashMap<>();
+	private static Map<String, Class> parkingLotAction = new HashMap<>();
 	private static Map generalRoot = new HashMap<>();
 	private static String endingDefault = "/index";
 	
 	static {
+		//Company
 		companyAction.put("/create", CreateCompanyAction.class);
 		companyAction.put("/update", UpdateCompanyAction.class);
 		companyAction.put("/delete", DeleteCompanyAction.class);
 		companyAction.put(Routes.endingDefault, DeleteCompanyAction.class);
 		generalRoot.put("/company", companyAction);
 		
-		employeeAction.put("/create", CreateEmployeeAction.class);
+		//Employee
+		employeeAction.put("/register", CreateEmployeeAction.class);
 		employeeAction.put("/update", UpdateEmployeeAction.class);
 		employeeAction.put("/delete", DeleteEmployeeAction.class);
 		employeeAction.put("/accessToken", GetAccessToken.class);
 		generalRoot.put("/employee", employeeAction);
+		
+		//ParkingLot
+		parkingLotAction.put("/create", CreateParkinglot.class);
+		generalRoot.put("/parkinglot", parkingLotAction);
 		
 	}
 	
