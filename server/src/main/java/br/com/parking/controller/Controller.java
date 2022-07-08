@@ -50,19 +50,30 @@ public class Controller extends HttpServlet {
 		String URI = req.getRequestURI();
 		Action action = null;
 		
+		Message msg = new Message();
+		
 		try {
 			action = Routes.getAction(URI);
-			Message msg = action.execute(req, resp);
+			msg = action.execute(req, resp);
 			
+//			String json = gson.toJson(msg);  
+//			
+//			resp.setContentType("application/json");
+//			resp.getWriter().print(json);
+			
+			
+			
+		} catch (RouteNotFoundException e) {
+			msg.setTitle("An error ocurred: Route not found");
+			msg.setMessage(e.getMessage());
+			e.printStackTrace();	
+		} finally {
 			String json = gson.toJson(msg);  
 			
 			resp.setContentType("application/json");
 			resp.getWriter().print(json);
-			return;
-			
-		} catch (RouteNotFoundException e1) {
-			e1.printStackTrace();
 		}
+		return;
 		
 	}
 
