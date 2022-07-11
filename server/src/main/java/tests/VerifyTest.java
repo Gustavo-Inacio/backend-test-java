@@ -1,4 +1,4 @@
-package br.com.parking.tests;
+package tests;
 
 import org.junit.Test;
 
@@ -6,11 +6,12 @@ import br.com.parking.model.Company;
 import br.com.parking.service.actions.company.VerifyCompany;
 import org.junit.Assert;
 import myExceptions.MissingDataException;
+import myExceptions.UniqueDataAlreadyExists;
 
 public class VerifyTest {
 	
 	@Test(expected = MissingDataException.class)
-	public void shouldReturnMissingData() throws MissingDataException {
+	public void shouldReturnMissingData() throws MissingDataException, UniqueDataAlreadyExists {
 		Company comp = new Company();
 		
 		comp.setName("nome");
@@ -21,7 +22,7 @@ public class VerifyTest {
 	}
 	
 	@Test(expected = MissingDataException.class)
-	public void shouldReturnMissingData2() throws MissingDataException {
+	public void shouldReturnMissingData2() throws MissingDataException, UniqueDataAlreadyExists {
 		Company comp = new Company();
 		
 		VerifyCompany ver = new VerifyCompany();
@@ -30,7 +31,7 @@ public class VerifyTest {
 	}
 	
 	@Test(expected = MissingDataException.class)
-	public void shouldReturnExeption() throws MissingDataException {
+	public void shouldReturnExeption() throws MissingDataException, UniqueDataAlreadyExists {
 		Company comp = new Company();
 		
 		comp.setName("");
@@ -42,7 +43,7 @@ public class VerifyTest {
 	}
 	
 	@Test(expected = MissingDataException.class)
-	public void shouldReturnExeptionMissing() throws MissingDataException {
+	public void shouldReturnExeptionMissing() throws MissingDataException, UniqueDataAlreadyExists {
 		Company comp = new Company();
 		
 		comp.setName("");
@@ -54,7 +55,7 @@ public class VerifyTest {
 	}
 	
 	@Test
-	public void shouldNotThrowException() throws MissingDataException {
+	public void shouldNotThrowException() throws Exception {
 		Company comp = new Company();
 		
 		comp.setName("nome da empresa");

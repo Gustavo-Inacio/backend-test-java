@@ -9,6 +9,10 @@ public class ParkingLot extends Model {
 		this.name = name;
 	}
 
+	public ParkingLot() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Company getComp() {
 		return comp;
 	}

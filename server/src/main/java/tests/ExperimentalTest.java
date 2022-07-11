@@ -1,4 +1,4 @@
-package br.com.parking.tests;
+package tests;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;

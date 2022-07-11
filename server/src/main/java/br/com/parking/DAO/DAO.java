@@ -16,9 +16,8 @@ public class DAO {
 			con = DriverManager.getConnection(url, user, password);
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
-		} finally{
-			return con;
 		}
+		return con;
 	}
 	
 	protected void closeConnection(Connection con) {
@@ -28,4 +27,5 @@ public class DAO {
 			System.out.println(ex.getMessage());
 		}
 	}
+	
 }

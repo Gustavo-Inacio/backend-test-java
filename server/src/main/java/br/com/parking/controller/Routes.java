@@ -12,6 +12,7 @@ import br.com.parking.service.actions.employee.DeleteEmployeeAction;
 import br.com.parking.service.actions.employee.GetAccessToken;
 import br.com.parking.service.actions.employee.UpdateEmployeeAction;
 import br.com.parking.service.actions.parkinglot.CreateParkinglot;
+import br.com.parking.service.actions.vehicle.type.CreateVehicleType;
 import myExceptions.RouteNotFoundException;
 
 public class Routes {
@@ -19,6 +20,8 @@ public class Routes {
 	private static Map<String, Class> companyAction = new HashMap<>();
 	private static Map<String, Class> employeeAction = new HashMap<>();
 	private static Map<String, Class> parkingLotAction = new HashMap<>();
+	private static Map vehicleAction = new HashMap<>();
+	private static Map<String, Class> vehicleTypeAction = new HashMap<>();
 	private static Map generalRoot = new HashMap<>();
 	private static String endingDefault = "/index";
 	
@@ -40,6 +43,16 @@ public class Routes {
 		//ParkingLot
 		parkingLotAction.put("/create", CreateParkinglot.class);
 		generalRoot.put("/parkinglot", parkingLotAction);
+		
+		//Vehicle
+		vehicleAction.put("/create", CreateParkinglot.class);
+		
+		//vehicleType
+		vehicleTypeAction.put("/create", CreateVehicleType.class);
+		vehicleAction.put("/type", vehicleTypeAction);
+		
+		
+		generalRoot.put("/vehicle", vehicleAction);
 		
 	}
 	

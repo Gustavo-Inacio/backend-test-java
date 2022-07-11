@@ -1,6 +1,6 @@
 package br.com.parking.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public abstract class Model {
 	public Integer id;
